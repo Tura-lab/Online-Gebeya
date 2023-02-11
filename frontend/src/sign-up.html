@@ -59,39 +59,38 @@
       <form data-toggle="validator" class="w-50 mx-auto mt-1 form-group needs-validation was-validated">
         <!-- Name input -->
         <div class="form-outline mb-4 was-validated">
-          <input type="text" id="form4Example1" class="form-control" required placeholder="First Name" />
+          <input type="text" id="firstname" class="form-control" required placeholder="First Name" />
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
 
         <div class="form-outline mb-4 was-validated">
-          <input type="text" id="form4Example1" class="form-control" required placeholder="Last Name" />
+          <input type="text" id="lastname" class="form-control" required placeholder="Last Name" />
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
 
         <div class="form-outline mb-4 was-validated">
-          <input type="text" id="form4Example1" class="form-control" required placeholder="Email" />
+          <input type="text" id="email" class="form-control" required placeholder="Email" />
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
 
         <div class="form-outline mb-4 was-validated">
-          <input type="text" id="form4Example1" class="form-control" required placeholder="Phone number" />
+          <input type="text" id="phone" class="form-control" required placeholder="Phone number" />
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
       
-        <!-- Email input -->
         <div class="form-outline mb-4 was-validated">
           <input type="password" class="form-control" id="password" name="password" required placeholder="Password"/>
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
 
         <div class="form-outline mb-4 was-validated">
-          <input type="password" class="form-control" id="password" name="cpassword" required placeholder="Confirm Password"/>
+          <input type="password" class="form-control" id="confirm-password" name="cpassword" required placeholder="Confirm Password"/>
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
       
         <!-- Submit button -->
         <div class="d-flex gap-2 align-items-center">
-          <button class="btn btn-primary" type="button">Sign up</button>
+          <button id="signUp" class="btn btn-primary" type="email" onclick="signUp">Sign up</button>
           <a href="./sign-in.html">Already have an account?</a>
         </div>
       </form>
