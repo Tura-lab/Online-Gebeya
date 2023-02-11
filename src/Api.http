@@ -1,7 +1,0 @@
-GET url HTTP/1.1
-
-POST http://localhost:3000/uploadFile HTTP/1.1
-Content-Type: image/jpeg
-header name: header value
-
-content
