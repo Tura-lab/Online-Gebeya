@@ -2,7 +2,7 @@ import { Document } from 'mongoose';
 
 
 export interface User extends Document {
-  firsrname: string;
+  firstname: string;
   lastname:string;
   email: string;
   readonly password: string;
