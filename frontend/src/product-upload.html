@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The best online shop!" />
+    <link rel="stylesheet" href="bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
+    <script src="bootstrap/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.js" defer></script>
+
+    <title>Sell Product</title>
+  </head>
+  <body class="h-100">
+
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Online Gebeya</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact-us.html">Contact us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Profile
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./sign-in.html">Log In</a></li>
+                <li><a class="dropdown-item" href="./sign-up.html">Sign Up</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sign Out</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    </header>
+
+    <!-- Main content -->
+    <h1 class="text-center display-3 mt-5 fw-bold">Sell your product</h1>
+      <form data-toggle="validator" class="w-50 mx-auto mt-1 form-group needs-validation was-validated">
+        <!-- Name input -->
+        <div class="form-outline mb-4 was-validated">
+          <input type="text" id="form4Example1" class="form-control" required placeholder="Product name" />
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+      
+        <!-- Email input -->
+        <div class="form-outline mb-4 was-validated">
+          <input type="number" class="form-control" id="price" name="price" required placeholder="Product Price"/>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+
+        <div class="form-outline mb-4">
+            <label for="image">Product Image</label>
+            <input type="file" class="form-control" id="image" name="price" />
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+      
+        <!-- Submit button -->
+        <div class="d-grid gap-2 align-items-center">
+          <button class="btn btn-primary" type="button">Upload</button>
+        </div>
+      </form>
+      <footer class="mt-5">
+        <div class="footer-texts d-flex justify-content-between">
+          <p>
+            Lorem ipsum dolor sit, 
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, 
+            consectetur adipisicing elit.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, 
+          </p>
+        </div>
+  
+        <!-- Social Media Icons -->
+        <div class="d-flex justify-content-center">
+          <img
+            height="20px"
+            width="20px"
+            src="./images/mail-icon.svg"
+            alt="mail-icon"
+          />
+          <img
+            height="20px"
+            width="20px"
+            src="./images/call-icon.svg"
+            alt="call-icon"
+          />
+          <img
+            height="20px"
+            width="20px"
+            src="./images/telegram-icon.svg"
+            alt="telegram-icon"
+          />
+          <img
+            height="20px"
+            width="20px"
+            src="./images/facebook-icon.svg"
+            alt="facebook-icon"
+          />
+          <img
+            height="20px"
+            width="20px"
+            src="./images/instagram-icon.svg"
+            alt="instagram-icon"
+          />
+          <img
+            height="20px"
+            width="20px"
+            src="./images/twitter-icon.svg"
+            alt="twitter-icon"
+          />
+        </div>
+      </footer>
+  </body>
+</html>
