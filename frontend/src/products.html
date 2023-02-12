@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <script src="bootstrap/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.js" defer></script>
     <script src="./scripts/navbar.js" defer></script>
+    <script src="./scripts/products.js" defer></script>
 
     <title>Explore Products</title>
   </head>
@@ -40,7 +41,7 @@
                 <li><a class="dropdown-item removable" href="./sign-in.html">Log In</a></li>
                 <li><a class="dropdown-item removable" href="./sign-up.html">Sign Up</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                <li><a  id="logoutButton" class="dropdown-item" href="#">Sign Out</a></li>
               </ul>
             </li>
           </ul>
@@ -55,47 +56,9 @@
     <!-- Main content -->
     <div class="container w-100 d-flex flex-column justify-content-center align-items-center mt-5">
       <h1 class="display-1 fw-bold mb-5">Explore Items</h1>
-      <div class="d-flex flex-column justify-content-center">
-        <div class="d-flex justify-content-center mb-2 border p-2">
-          <img class="w-25 img-fluid me-2 d-md-block d-none" src="./images/shop.jpg" alt="prodcut" />
-          <div class="d-flex d-flex align-items-center">
-            <div class="left">
-              <p class="display-4">Black Hoodie XLL</p>
-              <p class="display-5">Price: 200 birr</p>
-              <p>Seller: Abenezer Kebede</p>
-              <a href="./product-upload.html"><button class="btn btn-primary">Sell</button></a>
-            </div>
-            <a href="./product-detail.html"><button class="btn btn-primary">Expand Items</button></a>
-          </div>
-        </div>
+      <div id="products" class="d-flex flex-column justify-content-center">
+        
 
-
-        <div class="d-flex justify-content-center mb-2 border p-2">
-          <img class="w-25 img-fluid me-2 d-md-block d-none" src="./images/shop.jpg" alt="prodcut" />
-          <div class="d-flex d-flex align-items-center">
-            <div class="left">
-              <p class="display-4">Black Hoodie XLL</p>
-              <p class="display-5">Price: 200 birr</p>
-              <p>Seller: Abenezer Kebede</p>
-              <a href="./product-upload.html"><button class="btn btn-primary">Sell</button></a>
-            </div>
-            <a href="./product-detail.html"><button class="btn btn-primary">Expand Items</button></a>
-          </div>
-        </div>
-
-
-        <div class="d-flex justify-content-center mb-2 border p-2">
-          <img class="w-25 img-fluid me-2 d-md-block d-none" src="./images/shop.jpg" alt="prodcut" />
-          <div class="d-flex d-flex align-items-center">
-            <div class="left">
-              <p class="display-4">Black Hoodie XLL</p>
-              <p class="display-5">Price: 200 birr</p>
-              <p>Seller: Abenezer Kebede</p>
-              <a href="./product-upload.html"><button class="btn btn-primary">Sell</button></a>
-            </div>
-            <a href="./product-detail.html"><button class="btn btn-primary">Expand Items</button></a>
-          </div>
-        </div>
       </div>
     </div>
     <footer class="text-center text-lg-start" style="background-color:gray;">

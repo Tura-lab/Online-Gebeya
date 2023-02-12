@@ -24,11 +24,9 @@ export class UserService {
     });
 
     if (foundUser) {
-      console.log(foundUser,1212121)
       const isMatch = await bcrypt.compare(user.password, foundUser.password);
 
       if (!isMatch) {
-        console.log('wrpng pass')
         throw new UnauthorizedException('Incorrect login credentials!');
       }
 
@@ -37,12 +35,15 @@ export class UserService {
 
       const accessMessage: string = await this.jwtService.sign(payload);
 
-      console.log({...foundUser._doc }, 12121212)
-
       return { accessMessage, ...foundUser._doc };
     } else {
       throw new UnauthorizedException('Incorrect login credentials!');
     }
+  }
+
+  async getUserById(id) {
+    const user =  await this.userModel.findOne({_id: id});
+    return user
   }
 
   async createUser(user): Promise<User> {
