@@ -1,20 +1,32 @@
-import { Controller,Post, Get, Put, Delete, Body, Param, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Controller,Post, Get, Put, Delete, Body, Param, UploadedFile, UseInterceptors, UseGuards, Req } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { Product } from 'src/types/product';
 import { FileInterceptor } from '@nestjs/platform-express';
-@Controller('product')
+import * as fs from 'fs';
+import { AuthGuard } from '@nestjs/passport';
+import { request } from 'http';
+@Controller()
 export class ProductController {
     constructor(private productService: ProductService) { }
 
-  @Post()
+  @Post('create')
+  @UseGuards(AuthGuard('jwt'))
   @UseInterceptors(FileInterceptor('image'))
-  async upload(@UploadedFile() image, @Body() product) {
-    return this.productService.createProduct({ ...product, image});
+  async upload(@Req() request, @UploadedFile() image, @Body() product) {
+
+    console.log(request.user,11211212)
+
+    const imageUrl = `src/uploads/${image.originalname}`;
+
+    await fs.promises.writeFile(imageUrl, image.buffer);
+
+
+    return this.productService.createProduct({ ...product, image: imageUrl}, request.user);
   }
 
   @Get()
-  async findAll(): Promise<Product[]> {
-    return this.productService.getAllProduct();
+  async getAllProducts(): Promise<Product[]> {
+    return this.productService.getAllProducts();
   }
 
   @Get(':id')
