@@ -47,7 +47,10 @@ async function signIn() {
 
   if (response.status === 201) {
     localStorage.setItem('jwtTOKEN', res.accessMessage);
+    localStorage.setItem('currentUserName', `${res.firstname} ${res.lastname}`);
   }
+
+  console.log(res,2323232)
 
   return res;
 }
