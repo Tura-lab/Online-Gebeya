@@ -19,7 +19,7 @@ export class UserService {
   ) {}
 
   async signin(user): Promise<{ accessMessage: string }> {
-    const foundUser = await this.userModel.findOne({
+    const foundUser:any = await this.userModel.findOne({
       email: user.email
     });
 
@@ -37,8 +37,9 @@ export class UserService {
 
       const accessMessage: string = await this.jwtService.sign(payload);
 
+      console.log({...foundUser._doc }, 12121212)
 
-      return { accessMessage };
+      return { accessMessage, ...foundUser._doc };
     } else {
       throw new UnauthorizedException('Incorrect login credentials!');
     }
