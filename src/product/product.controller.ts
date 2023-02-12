@@ -1,13 +1,15 @@
-import { Controller,Post, Get, Put, Delete, Body, Param, Query, NotFoundException } from '@nestjs/common';
+import { Controller,Post, Get, Put, Delete, Body, Param, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { Product } from 'src/types/product';
+import { FileInterceptor } from '@nestjs/platform-express';
 @Controller('product')
 export class ProductController {
     constructor(private productService: ProductService) { }
 
-    @Post()
-  async create(@Body() product: Product) {
-    return this.productService.createProduct(product);
+  @Post()
+  @UseInterceptors(FileInterceptor('image'))
+  async upload(@UploadedFile() image, @Body() product) {
+    return this.productService.createProduct({ ...product, image});
   }
 
   @Get()
