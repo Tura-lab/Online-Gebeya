@@ -102,13 +102,11 @@ async function signIn() {
 
   if (response.status === 201) {
     localStorage.setItem('jwtTOKEN', res.accessMessage);
-<<<<<<< Updated upstream
+    
     localStorage.setItem('currentUserName', `${res.firstname} ${res.lastname}`);
-=======
     return window.location.replace(
       'http://localhost:5500/Frontend/src/products.html',
     );
->>>>>>> Stashed changes
   }
 
   console.log(res,2323232)
