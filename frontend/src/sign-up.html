@@ -14,6 +14,7 @@
   </head>
   <body>
 
+
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-light">
       <div class="container-fluid">
@@ -60,41 +61,43 @@
     <h1 class="text-center display-3 mt-5 fw-bold">Sign Up</h1>
 
       <div class="status-message text-center w-50 mx-auto" style="border-radius: .5em; opacity: .8;"></div>
-      <form data-toggle="validator" class="w-50 mx-auto mt-1 form-group needs-validation was-validated">
+      <form data-toggle="validator" class="w-50 mx-auto mt-1 form-group needs-validation" novalidate>
+
         <!-- Name input -->
-        <div class="form-outline mb-4 was-validated">
+        <div class="form-outline mb-4 ">
           <input type="text" id="firstname" class="form-control" required placeholder="First Name" />
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
 
-        <div class="form-outline mb-4 was-validated">
+        <div class="form-outline mb-4 ">
           <input type="text" id="lastname" class="form-control" required placeholder="Last Name" />
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
 
-        <div class="form-outline mb-4 was-validated">
-          <input type="text" id="email" class="form-control" required placeholder="Email" />
+        <div class="form-outline mb-4 ">
+          <input type="email" id="email" class="form-control" required placeholder="Email" />
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
 
-        <div class="form-outline mb-4 was-validated">
+        <div class="form-outline mb-4 ">
           <input type="text" id="phone" class="form-control" required placeholder="Phone number" />
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
       
-        <div class="form-outline mb-4 was-validated">
-          <input type="password" class="form-control" id="password" name="password" required placeholder="Password"/>
+        <div class="form-outline mb-4 ">
+          <input type="password" class="form-control first_password" id="password" name="password" required placeholder="Password"/>
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
 
-        <div class="form-outline mb-4 was-validated">
-          <input type="password" class="form-control" id="confirm-password" name="cpassword" required placeholder="Confirm Password"/>
-          <div class="invalid-feedback">Please fill out this field.</div>
+        <div class="form-outline mb-4 ">
+          <input type="password" class="form-control second_password" id="confirmPassword" name="cpassword" required placeholder="Confirm Password"/>
+          <div class="invalid-feedback passNotsimilar">Password not similar.</div>
         </div>
       
         <!-- Submit button -->
         <div class="d-flex gap-2 align-items-center">
-          <button id="signUp" class="btn btn-primary submit-btn" type="submit">Sign up</button>
+
+          <button id="signUp" class="btn btn-primary sign-up submit-btn" type="submit">Sign up</button>
           <a href="./sign-in.html">Already have an account?</a>
         </div>
       </form>
@@ -151,5 +154,19 @@
         </div>
       
       </footer>
+
+      <script>
+
+
+
+
+
+
+
+
+        
+        
+      </script>
   </body>
+
 </html>
