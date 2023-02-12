@@ -7,7 +7,6 @@ import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from 'src/types/user';
 import { JwtService } from '@nestjs/jwt';
-import { UserSchema } from 'src/models/user.schema';
 import { UserJwtPayload } from 'src/types/jwt-payload';
 
 import * as bcrypt from 'bcrypt';
@@ -25,16 +24,17 @@ export class UserService {
     });
 
     if (foundUser) {
+      console.log(foundUser,1212121)
       const isMatch = await bcrypt.compare(user.password, foundUser.password);
-      console.log(foundUser)
 
       if (!isMatch) {
+        console.log('wrpng pass')
         throw new UnauthorizedException('Incorrect login credentials!');
       }
 
-      console.log(foundUser);
       const typeid = user.id;
       const payload: UserJwtPayload = { username: user.email, typeid };
+
       const accessMessage: string = await this.jwtService.sign(payload);
 
 
