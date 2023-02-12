@@ -10,7 +10,6 @@ export class UserController {
 
     constructor(private userService: UserService){}
 
-    @UseGuards(JwtAuthGuard)
     @Post('signup')
     async signUp(@Body() data: User) {
 
@@ -19,11 +18,7 @@ export class UserController {
 
     @Post('signin')
     async signIn(@Body() user:User) {
-
-        console.log(user)
-
         return this.userService.signin(user);
-
     }
 
 }

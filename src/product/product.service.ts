@@ -31,11 +31,11 @@ export class ProductService {
   async getAllProducts(): Promise<Product[]> {
     const products = await this.productModel.find().exec();
 
-    const id = await products[0].owner
+    // const id = await products[0].owner
 
-    const owner = await this.userModel.findOne({ _id: id });
+    // const owner = await this.userModel.findOne({ _id: id });
 
-    console.log(owner,7637634)
+    // console.log(owner,7637634)
 
     return products
 
