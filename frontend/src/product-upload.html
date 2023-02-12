@@ -7,6 +7,7 @@
     <meta name="description" content="The best online shop!" />
     <link rel="stylesheet" href="bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <script src="bootstrap/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.js" defer></script>
+    <script src="./scripts/product-upload.js" defer></script>
 
     <title>Sell Product</title>
   </head>
@@ -56,10 +57,10 @@
 
     <!-- Main content -->
     <h1 class="text-center display-3 mt-5 fw-bold">Sell your product</h1>
-      <form data-toggle="validator" class="w-50 mx-auto mt-1 form-group needs-validation was-validated">
+      <form data-toggle="validator" class="w-50 mx-auto mt-1 form-group needs-validation was-validated"  enctype="multipart/form-data">
         <!-- Name input -->
         <div class="form-outline mb-4 was-validated">
-          <input type="text" id="form4Example1" class="form-control" required placeholder="Product name" />
+          <input type="text" id="title" class="form-control" required placeholder="Product name" />
           <div class="invalid-feedback">Please fill out this field.</div>
         </div>
       
@@ -71,13 +72,13 @@
 
         <div class="form-outline mb-4">
             <label for="image">Product Image</label>
-            <input type="file" class="form-control" id="image" name="price" />
+            <input type="file" class="form-control" id="image" name="price"  accept="image/*" />
             <div class="invalid-feedback">Please fill out this field.</div>
           </div>
       
         <!-- Submit button -->
         <div class="d-grid gap-2 align-items-center">
-          <button class="btn btn-primary" type="button">Upload</button>
+          <button id="uploadButton" class="btn btn-primary" type="button">Upload</button>
         </div>
       </form>
       <footer class="mt-5">

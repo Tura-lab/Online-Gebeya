@@ -9,7 +9,6 @@ export const ProductSchema = new mongoose.Schema({
   image: String,
   price: Number,
   created: {
-    type: Date,
-    default: Date.now,
+    type: Date
   },
 });

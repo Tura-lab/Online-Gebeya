@@ -13,17 +13,6 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post()
-  @UseInterceptors(FilesInterceptor('image'))
-  uploadFile(@UploadedFiles() file){
-    console.log(file);  
-  }
-
-  @Get(':imgpath')
-  seeUploadedFile(@Param('imgpath') image, @Res() res){
-    return res.sendFile(image, {root: 'src/uploads'});
-  }
-
 }
 
 
