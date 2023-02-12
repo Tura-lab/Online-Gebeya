@@ -12,12 +12,14 @@ const signInButton = document.getElementById('signInButton');
 const passwordS = document.getElementById('passwordS');
 const emailS = document.getElementById('emailS');
 
+
 if (signInButton) {
   signInButton.addEventListener('click', (e) => {
     e.preventDefault();
     signIn();
   });
 }
+
 
 if (signUpButton) {
   signUpButton.addEventListener('click', (e) => {
