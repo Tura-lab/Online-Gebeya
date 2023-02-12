@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Req, UseGuards } from '@nestjs/common';
 import { User } from 'src/types/user';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import { UserService } from './user.service';
@@ -14,6 +14,16 @@ export class UserController {
     async signUp(@Body() data: User) {
 
         return this.userService.createUser(data);
+    }
+
+    @Get('logout')
+    async logout(@Req() req) {
+        return { message: 'Logged out successfully' };
+    }
+
+    @Get('/:id')
+    async getUserById(@Param('id') id){
+        return await this.userService.getUserById(id);
     }
 
     @Post('signin')

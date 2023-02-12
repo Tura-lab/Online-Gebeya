@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="bootstrap/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css">
     <script src="bootstrap/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.js" defer></script>
     <script src="./scripts/navbar.js" defer></script>
+    <script src="./scripts/product-detail.js" defer></script>
 
     <title>Document</title>
 </head>
@@ -34,14 +35,14 @@
                 <a class="nav-link" href="./contact-us.html">Contact us</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a id="profile" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Profile
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item removable" href="./sign-in.html">Log In</a></li>
                   <li><a class="dropdown-item removable href="./sign-up.html">Sign Up</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Sign Out</a></li>
+                  <li><a  id="logoutButton" class="dropdown-item" href="#">Sign Out</a></li>
                 </ul>
               </li>
             </ul>
@@ -55,23 +56,10 @@
 
     <!-- Main content -->
     
-    <div class="container-fluid d-flex justify-content-center align-items-center mt-5 h-100 w-100">
-        <div class="p-2 border">
-    
-            <h1 class="display-5">Black Hoodie XLL</h1>
-            <h5>Seller: Abenezer Kebede</h5>
-            <h5>Date Posted: May 12 2020</h5>
-    
-            <img style="max-width: 450px;" class="img-fluid d-md-block d-none" src="./images/shop.jpg" alt="prodcut">
-    
-            <div class="buttons d-flex justify-content-end mt-2">
-                <button class="btn btn-primary me-2">Contact Seller</button>
-                <button class="btn btn-primary">Buy</button>
-            </div>
-    
-        </div>
+    <div id="product" class="container-fluid d-flex justify-content-center align-items-center mt-5 h-100 w-100">
+        
     </div>
-    <footer class="text-center text-lg-start" style="background-color:gray;">
+    <footer class="text-center text-lg-start" style="background-color:gray; margin-top:5em">
       <div class="container d-flex justify-content-center py-5">
         <a href="gmail.com"><img
           height="35px"

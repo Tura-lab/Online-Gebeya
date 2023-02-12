@@ -30,7 +30,8 @@ export class ProductController {
   }
 
   @Get(':id')
-  async findOne(@Param('id') id: string) {
+  async getProductById(@Param('id') id: string) {
+    console.log('Product 743687364')
     return this.productService.getProductById(id);
   }
 

@@ -42,7 +42,7 @@ export class ProductService {
   }
 
   async getProductById(id: string): Promise<Product> {
-    return await this.productModel.findById(id).exec();
+    return await this.productModel.findOne({_id: id})
   }
 
   async updateProduct(id: string, product: Product): Promise<Product> {

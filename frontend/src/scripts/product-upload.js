@@ -16,11 +16,15 @@ uploadButton.addEventListener('click', (e) => {
 async function uploadProduct() {
   const url = `${api}/create`;
 
+
+
   const formData = new FormData();
     formData.append('image', image.files[0]);
     formData.append('title', title.value);
     formData.append('price', price.value);
+    formData.append('owner', localStorage.getItem('currentUserId'))
 
+    console.log('Uploader:', localStorage.getItem('currentUserId'))
 
   const response = await fetch(url, {
     method: 'POST',
