@@ -2,29 +2,46 @@ import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Product } from 'src/types/product';
-import { BadRequestException } from '@nestjs/common';
+import { User } from 'src/types/user';
+
 
 
 @Injectable()
 export class ProductService {
-  constructor(@InjectModel('Product') private readonly productModel: Model<Product>) { }
+  constructor(@InjectModel('Product') private readonly productModel: Model<Product>,@InjectModel('User')  private userModel: Model<User>) { }
 
-  async createProduct(product: Product): Promise<Product> {
-    const createdProduct = new this.productModel(product);
+  async createProduct(product: Product, user): Promise<Product> {
 
-    console.log(createdProduct)
-    
+
+    const uploader: User = await this.userModel.findOne(
+      {email: user.username}
+    )
+
+    let newProduct = {...product, owner: uploader.id}
+
+    const createdProduct = new this.productModel(newProduct);
+
+    console.log(createdProduct,837458364)
+
+
+
     return await createdProduct.save();
   }
 
-  async getAllProduct(): Promise<Product[]> {
-    return await this.productModel.find().exec();
+  async getAllProducts(): Promise<Product[]> {
+    const products = await this.productModel.find().exec();
+
+    const id = await products[0].owner
+
+    const owner = await this.userModel.findOne({ _id: id });
+
+    console.log(owner,7637634)
+
+    return products
+
   }
 
   async getProductById(id: string): Promise<Product> {
-    // if (!(id in this.productModel)) {
-    //   throw new BadRequestException('Product not found');
-    // }
     return await this.productModel.findById(id).exec();
   }
 
