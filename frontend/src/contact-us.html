@@ -56,23 +56,23 @@
 
     <!-- Main content -->
     <h1 class="text-center display-3 mt-5 fw-bold">Contact Us</h1>
-      <form data-toggle="validator" class="w-50 mx-auto mt-1 form-group needs-validation was-validated">
+      <form data-toggle="validator" class="w-50 mx-auto mt-1 form-group needs-validation " novalidate>
         <!-- Name input -->
-        <div class="form-outline mb-4 was-validated">
+        <div class="form-outline mb-4 ">
           <input type="text" id="form4Example1" class="form-control" required />
           <div class="invalid-feedback">Please fill out this field.</div>
           <label class="form-label">Name</label>
         </div>
       
         <!-- Email input -->
-        <div class="form-outline mb-4 was-validated">
-          <input type="text" class="form-control" id="email" name="email" required>
+        <div class="form-outline mb-4 ">
+          <input type="email" class="form-control" id="email" name="email" required>
           <div class="invalid-feedback">Please fill out this field.</div>
           <label class="form-label">Email address</label>
         </div>
       
         <!-- Message input -->
-        <div class="form-outline mb-4 was-validated">
+        <div class="form-outline mb-4 ">
           <textarea class="form-control" id="form4Example3" rows="4" required></textarea>
           <div class="invalid-feedback">Please fill out this field.</div>
           <label class="form-label">Message</label>
@@ -80,7 +80,7 @@
       
         <!-- Submit button -->
         <div class="d-grid gap-2">
-          <button class="btn btn-primary" type="button">Send Message</button>
+          <button class="btn btn-primary" type="submit">Send Message</button>
         </div>
       </form>
       <footer class="text-center text-lg-start" style="background-color:gray; margin-top: 1em;">
@@ -136,5 +136,25 @@
         </div>
       
       </footer>
+
+      <script>
+        (function () {
+          'use strict'
+        
+          var forms = document.querySelectorAll('.needs-validation')
+        
+          Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                }
+                
+                form.classList.add('was-validated')
+              }, false)
+            })
+        })()
+      </script>
   </body>
 </html>
