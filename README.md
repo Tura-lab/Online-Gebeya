@@ -6,13 +6,13 @@
 4. [Daniel Wossen UGR/4400/13 sec 3](https://github.com/daniel-w1/)
 
 
-#Online Gebeya Backend
+# Online Gebeya Backend
 The Online Gebeya Backend is a RESTful API that provides the backend for ecommerce applications. With the API, developers can access and manage product information and customer information.
 
-#Getting Started
+# Getting Started
 To start using the Online Gebeya Backend, you will need to sign up for an API key. Once you have your API key, you can start making requests to the API. All requests to the API must be made over HTTPS and include your API key in the request header.
 
-#Endpoints
+# Endpoints
 The Online Gebeya Backend has the following endpoints:
 
 Products: Endpoint for managing product information, including adding new products, updating existing products, and retrieving product information.
